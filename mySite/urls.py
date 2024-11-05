@@ -22,3 +22,9 @@ urlpatterns = [
     path('debug/', include('debug_toolbar.urls')),
     path('', include('examenDWSdjango.urls')),
 ]
+
+from django.conf.urls import handler400,handler404,handler403,handler500
+handler404 = "examenDWSdjango.views.mi_error_400"
+handler503 = "examenDWSdjango.views.mi_error_403"
+handler503 = "examenDWSdjango.views.mi_error_404"
+handler500 = "examenDWSdjango.views.mi_error_500"

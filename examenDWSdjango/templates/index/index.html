@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+</head>
+
+<body>
+    <ul>
+        <li><a href="{% url 'ultimo_voto' %}">ultimo voto</a></li>
+        <li><a href="{% url 'cuentas_nombre' 'manuel'%}">Cuentas segun nombre parámetro</a></li>
+        <li><a href="{% url 'votos_menor3' 5 %}">puntuaciones menor que tres usuario específico</a> </li>
+        <li><a href=""></a></li>
+        <li><a href="{% url 'votos_2023_5pts'%}">Votaciones postertiores a 2023 con 5 puntos</a></li>
+        <li><a href=""></a></li>
+    </ul>
+</body>
+
+</html>

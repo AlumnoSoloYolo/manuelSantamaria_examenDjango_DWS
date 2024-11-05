@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for cuenta in cuentas %}
+    <h1>{{cuenta.cliente.nombre}}</h1>
+    <p>{{cuenta.numero_cuenta}}</p>
+    <p>{{cuenta.banco}}</p>
+    {% endfor %}
+</body>
+</html>
