@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.db.models import Q,F,Prefetch
+from django.db.models import Q,F,Prefetch, Avg
 from .models import Moto, Cliente, Voto_cliente, Cuenta_bancaria
 
 # Create your views here.
@@ -50,7 +50,13 @@ def votos_cliente_2023(request):
     return render(request, 'votos/votos_2023.html', {'votos': votos})
 
 # 6 Obtener todos los modelos principales que tengan una media de votaciones mayor del 2,5: 1.5 punto
-# def media_mayor(request):
+
+def motos_media_alta(request):
+    
+    motos = Moto.objects.annotate(media_votacion=Avg('voto_moto__puntuacion')).filter(media_votacion__gt=2.5)
+
+    return render(request, 'votos/motos_media.html', {'motos': motos})
+
 
 
 
